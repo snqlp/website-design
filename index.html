@@ -235,24 +235,20 @@ h2{
   content:'';width:18px;height:1px;background:var(--green);flex-shrink:0;
 }
 
-/* USE CASES */
-.usecases{padding:88px 6%;background:var(--cream2)}
-.usecases-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+/* TESTIMONIALS */
+.testimonial-section{padding:120px 0;background:var(--green-light)}
+.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:40px;margin-top:60px}
+.testimonial-card{background:#fff;border-radius:8px;padding:32px;box-shadow:0 6px 32px rgba(28,26,24,.08)}
+.testimonial-quote{font-size:18px;line-height:1.8;margin-bottom:28px}
+.testimonial-author{display:flex;gap:16px;align-items:center}
+.author-img{width:56px;height:56px;border-radius:50%}
+.author-name{font-size:16px;font-weight:500;margin-bottom:4px}
+.author-company{font-size:13px;color:var(--mid)}
+@media screen and (max-width: 800px){
+  .testimonial-section{padding:60px 0}
+  .testimonial-quote{font-size:16px}
+  .testimonial-author{margin-left:0}
 }
-.uc{
-  background:var(--cream);border:1px solid var(--border);
-  border-radius:12px;padding:28px 24px;
-  transition:border-color .2s,transform .2s;
-}
-.uc:hover{border-color:var(--green);transform:translateY(-2px)}
-.uc-icon{
-  font-size:24px;margin-bottom:16px;
-  width:48px;height:48px;background:var(--green-light);
-  border-radius:10px;display:flex;align-items:center;justify-content:center;
-}
-.uc-title{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:6px;letter-spacing:0.2px}
-.uc-desc{font-size:12px;color:#222;line-height:1.6;font-weight:300}
 
 /* PHONE MOCKUPS */
 .how{background:var(--cream2);padding:88px 6%;border-top:1px solid var(--border)}
@@ -336,19 +332,18 @@ h2{
 
 /* FOOTER */
 footer{
-  background:var(--dark2);padding:40px 6%;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
-  border-top:1px solid rgba(255,255,255,0.05);
+  background:var(--dark);padding:48px 6%;
+  color:var(--cream);border-top:1px solid rgba(255,255,255,0.04);
 }
-.footer-logo{
-  font-family:var(--serif);font-size:22px;font-weight:400;
-  color:rgba(255,255,255,0.6);
-}
-.footer-logo span{font-weight:300}
-footer p{font-size:11px;color:rgba(255,255,255,0.25)}
-.footer-links{display:flex;gap:24px}
-.footer-links a{font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:0.8px;text-transform:uppercase;transition:color .2s}
-.footer-links a:hover{color:rgba(255,255,255,0.7)}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;align-items:start;max-width:1080px;margin:0 auto}
+.footer-brand{font-family:var(--serif);font-size:28px;font-weight:400;color:var(--cream);margin-bottom:6px}
+.footer-tag{font-family:var(--serif);color:var(--cream);opacity:0.9;margin-bottom:18px}
+.footer-col h4{font-size:13px;margin-bottom:12px;color:var(--cream);letter-spacing:0.6px}
+.footer-col ul{list-style:none;padding:0;margin:0}
+.footer-col li{font-size:13px;color:var(--cream);opacity:0.9;padding:6px 0}
+.footer-contact{font-size:13px;color:var(--cream);opacity:0.95}
+.footer-cta{display:inline-block;background:var(--green);color:#fff;padding:10px 18px;border-radius:4px;text-transform:uppercase;font-size:12px;font-weight:600}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.04);margin-top:22px;padding-top:18px;text-align:center;font-size:13px;opacity:0.9}
 
 /* MOBILE */
 @media(max-width:900px){
@@ -367,7 +362,6 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
   .feature-img-inner{height:420px!important;min-height:420px!important}
   .feature-img-inner{min-height:220px;position:relative}
   .feature-content{padding:36px 24px 48px}
-  .usecases-grid{grid-template-columns:repeat(2,1fr)}
   .steps{grid-template-columns:1fr 1fr}
   .pricing-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto}
   .hero-stats{flex-wrap:wrap}
@@ -376,7 +370,6 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
 }
 @media(max-width:540px){
   .client-grid{grid-template-columns:1fr}
-  .usecases-grid{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
   .hero-stats{display:grid;grid-template-columns:1fr 1fr}
   .hstat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:16px;margin-right:0}
@@ -394,7 +387,6 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
     <a href="#services">Services</a>
     <a href="#usecases">Use Cases</a>
     <a href="#how">Process</a>
-    <a href="#pricing">Pricing</a>
     <a href="https://wa.me/917845046889?text=I%20want%20a%20demo%20of%20whatsapp%20marketing%20solution%20for%20my%20business" class="nav-cta">Get Free Demo</a>
   </div>
   <div class="nav-ham" id="ham">
@@ -409,8 +401,7 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
   <a href="#services" onclick="document.getElementById('mob-menu').style.display='none'" style="font-size:18px;font-family:var(--serif);color:var(--dark)">Services</a>
   <a href="#usecases" onclick="document.getElementById('mob-menu').style.display='none'" style="font-size:18px;font-family:var(--serif);color:var(--dark)">Use Cases</a>
   <a href="#how" onclick="document.getElementById('mob-menu').style.display='none'" style="font-size:18px;font-family:var(--serif);color:var(--dark)">Process</a>
-  <a href="#pricing" onclick="document.getElementById('mob-menu').style.display='none'" style="font-size:18px;font-family:var(--serif);color:var(--dark)">Pricing</a>
-  <a href="#contact" onclick="document.getElementById('mob-menu').style.display='none'" style="background:var(--green);color:#fff;padding:14px 36px;border-radius:2px;font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase">Get Free Demo</a>
+  <a onclick="document.getElementById('mob-menu').style.display='none'" href="https://wa.me/917845046889?text=I%20want%20a%20demo%20of%20whatsapp%20marketing%20solution%20for%20my%20business" style="background:var(--green);color:#fff;padding:14px 36px;border-radius:2px;font-size:13px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase">Get Free Demo</a>
 </div>
 
 
@@ -559,55 +550,7 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
 </div>
 
 
-<section class="usecases" id="usecases">
-  <div class="section-inner">
-    <span class="section-tag">Capabilities</span>
-    <h2>Everything WhatsApp can do<br>for your business</h2>
-    <p class="section-sub">From a single message to a fully automated customer journey — we build and manage it all.</p>
-    <div class="usecases-grid">
-      <div class="uc">
-        <div class="uc-icon">✅</div>
-        <div class="uc-title">Official WhatsApp Number</div>
-        <p class="uc-desc">Meta-verified API number with green tick so customers trust every message you send.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">🏅</div>
-        <div class="uc-title">Green Tick Verification</div>
-        <p class="uc-desc">Get your business profile officially verified — stand out in every customer's inbox.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">📣</div>
-        <div class="uc-title">Bulk WhatsApp Messages</div>
-        <p class="uc-desc">Send offers, announcements, and campaigns to thousands of customers in one click.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">🍽</div>
-        <div class="uc-title">Table Bookings</div>
-        <p class="uc-desc">Automated restaurant table booking flows — customers confirm slots without a phone call.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">📅</div>
-        <div class="uc-title">Appointment Scheduling</div>
-        <p class="uc-desc">Clinics, salons, and showrooms automate appointment booking 24/7 on WhatsApp.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">💳</div>
-        <div class="uc-title">Payments via WhatsApp</div>
-        <p class="uc-desc">Send payment links directly in the chat. Customers pay without leaving WhatsApp.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">📥</div>
-        <div class="uc-title">Inbox Management</div>
-        <p class="uc-desc">Unified team inbox to manage all customer conversations — assign, tag, and resolve at scale.</p>
-      </div>
-      <div class="uc">
-        <div class="uc-icon">🤖</div>
-        <div class="uc-title">Chatbot Automation</div>
-        <p class="uc-desc">FAQ bots, lead qualification flows, drip sequences — running automatically around the clock.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Use cases section removed as requested -->
 
 
 
@@ -649,19 +592,48 @@ footer p{font-size:11px;color:rgba(255,255,255,0.25)}
 <section class="cta-section" id="contact">
   <h2>Ready to own the<br>most direct channel?</h2>
   <p>Book a free 30-minute consultation. We'll map out exactly what WhatsApp can do for your business.</p>
-  <a href="https://wa.me/917845046889?text=Hi%2C%20I%27d%20like%20to%20know%20more%20about%20Corner%20Stone" class="btn-green">Chat with us on WhatsApp →</a>
+  <a href="https://wa.me/917845046889?text=I%20want%20a%20demo%20of%20whatsapp%20marketing%20solution%20for%20my%20business" class="btn-green">Chat with us on WhatsApp →</a>
   <p class="cta-alt">Or email us at <a href="mailto:hello@cornerstone.in">hello@cornerstone.in</a></p>
 </section>
 
 
 <footer>
-  <div class="footer-logo">corner<span>stone</span></div>
-  <p>© 2026 Corner Stone. WhatsApp Marketing for Premium Businesses.</p>
-  <div class="footer-links">
-    <a href="#services">Services</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#contact">Contact</a>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">corner <span style="font-weight:300">stone</span></div>
+      <div class="footer-tag">WhatsApp Marketing for Premium Businesses</div>
+    </div>
+    <div class="footer-cols" style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:18px;align-items:start">
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li>Official Number</li>
+          <li>Bulk Campaigns</li>
+          <li>Chatbot</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li class="footer-contact">hello@cornerstone.in</li>
+          <li class="footer-contact">WhatsApp: +91 78450 46889</li>
+          <li class="footer-contact">Prayagraj, India</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#how">Process</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
+  <div style="margin-top:20px;display:flex;gap:16px;align-items:center;justify-content:flex-start;flex-wrap:wrap">
+    <a class="footer-cta" href="https://wa.me/917845046889?text=I%20want%20a%20demo%20of%20whatsapp%20marketing%20solution%20for%20my%20business">Get a demo on WhatsApp</a>
+  </div>
+  <div class="footer-bottom">© 2026 Corner Stone. All rights reserved.</div>
 </footer>
 
 <script>
@@ -669,17 +641,4 @@ document.getElementById('ham').onclick = function(){
   document.getElementById('mob-menu').style.display='flex';
 }
 </script>
-/* TESTIMONIALS */
-.testimonial-section{padding:120px 0;background:var(--green-light)}
-.testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:40px;margin-top:60px}
-.testimonial-card{background:#fff;border-radius:8px;padding:32px;box-shadow:0 6px 32px rgba(28,26,24,.08)}
-.testimonial-quote{font-size:18px;line-height:1.8;margin-bottom:28px}
-.testimonial-author{display:flex;gap:16px;align-items:center}
-.author-img{width:56px;height:56px;border-radius:50%}
-.author-name{font-size:16px;font-weight:500;margin-bottom:4px}
-.author-company{font-size:13px;color:var(--mid)}
-@media screen and (max-width: 800px){
-  .testimonial-section{padding:60px 0}
-  .testimonial-quote{font-size:16px}
-  .testimonial-author{margin-left:0}
-}
+
