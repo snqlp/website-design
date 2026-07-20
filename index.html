@@ -105,7 +105,8 @@ nav{
 .hero-img-wrap .bubble-2{top:42%;right:12px;width:40%;max-width:40%}
 .hero-img-wrap .bubble-3{bottom:12px;left:12px;width:56%;max-width:56%}
 @media(max-width:480px){
-  .hero-img-wrap .bubble{padding:6px 8px;font-size:8px}
+  .hero-img-wrap .bubble{padding:5px 7px;font-size:7.5px}
+  .hero-img-wrap .bubble-2{width:44%;max-width:44%}
 }
 
 /* Ensure image containers hide overflow */
@@ -243,9 +244,9 @@ footer{background:var(--dark);padding:48px 20px;color:var(--cream);border-top:1p
 .author-img{width:48px;height:48px;border-radius:50%;background:#1A8F69;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:16px;flex-shrink:0}
 .author-name{font-size:15px;font-weight:700;margin-bottom:0}
 .author-company{font-size:13px;color:var(--mid)}
-  .hero-top{padding:44px 5% 48px}
-  .hero-img-wrap{display:none}
-  .hero-img-mobile{display:block;border-radius:14px;overflow:hidden;height:220px;margin:16px 0 20px;position:relative;background:var(--dark);background-image:linear-gradient(135deg, rgba(26,143,105,0.06), rgba(26,143,105,0.12));background-size:cover;background-position:center}
+  .hero-top{padding:44px 5% 24px}
+  .hero-img-wrap{display:block;margin:0 0 24px;aspect-ratio:16/10}
+  .hero-img-mobile{display:none}
   .hero-img-mobile img{display:none}
   .client-grid{grid-template-columns:1fr 1fr;gap:10px}
   .feature-img{padding:24px 24px 0}
@@ -369,8 +370,11 @@ footer{
 @media(max-width:540px){
   .client-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr}
-  .hero-stats{display:flex;flex-direction:row;gap:12px;overflow:auto;padding:8px 0}
-  .hstat{flex:1;min-width:0;border-right:none;border-bottom:none;padding:8px 12px;margin-right:0;text-align:center}
+  .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 0;overflow:visible}
+  .hstat{min-width:0;border-right:none;border-bottom:1px solid var(--border);padding:10px 8px;text-align:center}
+  .hstat:nth-child(2n){border-right:none}
+  .hstat:last-child{border-bottom:none}
+  .hstat:nth-last-child(2){border-bottom:none}
   .hstat-n{font-size:18px}
   .hstat-l{font-size:11px}
 }
@@ -407,6 +411,7 @@ footer{
   .steps{grid-template-columns:1fr!important;gap:14px}
   .step{padding:20px}
   .hero-img-wrap{overflow:hidden}
+  .hero-sub{font-size:14px;margin-bottom:16px}
 }
 </style>
 
